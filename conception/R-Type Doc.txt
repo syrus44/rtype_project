@@ -1,0 +1,335 @@
+
+R-Type Documentation						[Page 1]
+15 November 2013					 
+							   Jordan BETTIN
+							    Mael CHARLES		
+							  Louis CAILLEUX 
+							    Pierre PETIT
+			       	       			  Florent CERFON
+				       	       		  Antoine DUGAST
+
+Abstract
+
+     This document is a summary of the game : R-Type Dimensions made by
+     this team. It explains the main goal of this game and the features
+     developped. A special section explains the behaviour of the
+     communication protocol used through this game.
+
+Table of Contents
+
+      1. Introduction ................................................2
+      2. Synopsis ....................................................2
+      	 2.1. What is R-Type .........................................2
+	 2.2. Main objective .........................................2
+	 2.3. Supported Platforms ....................................2
+      3. Installation and Execution ..................................3
+      	 3.1 How to install R-Type on Linux ..........................3
+	 3.2. How to install R-Type on Windows .......................3
+	 3.3. Minimum specifications .................................3
+      4. How to Play .................................................4
+      	 4.1. Supported devices ......................................4
+	 4.2. Command listing ........................................4
+      5. Game Options ................................................4
+      6. Scoring .....................................................4
+      7. Communication Protocol ......................................5
+      	 7.1. Description ............................................5
+	 7.2. UDP Messages ...........................................5
+	 7.3. Sending / Receiving procedure ..........................5
+      8. Multiplayer Games ...........................................5
+      9. Frequently Asked Questions ..................................6
+      10. Credits ....................................................7
+
+
+
+R-Type Documentation					       [Page 2]
+
+
+1. Introduction
+
+      This game is a reborn of this license and gains some new features
+       : Multi Player and LAN Games.
+
+2. Synopsis
+
+      2.1. What is R-Type ?
+
+      R-Type is a shoot-em-up with horizontal scrolling. The player 
+      commands the R-9A "Arrowhead" to defend mankind against the Bydo 
+      Empire. This game was developped by Irem and published by Electric 
+      Dreams on Amstrad CPC. The game was released on this support in 
+      1987.
+
+      2.2. Main goal of R-Type
+
+      You are a commander lonely onboard the R-9A, your trusty ship. 
+      Your mission is to defeat the Bydo Empire, who wants to enslave 
+      the humanity. With your trivial equipement, your main goal is to 
+      infiltrate the empire and defeat everything that is on your way. 
+      To do this, you can have and upgrade your ship with powerful alien
+      weapons and fun bonus. You only dispose of 3 lives, so be careful 
+      when you encounter the terrible forces of the Bydo Empire.
+
+      2.3. Supported Platforms
+
+      This version of R-Type can be played on UNIX operating systems and 
+      Microsoft operating systems. There are the minimum system 
+      requirements to install and play the game : 
+
+      Unix : A unix-like operating system with based-packages. You have to
+      install the building packages (make and cmake) to be able to compile 
+      the sources. Of course, you should install the standard compilers 
+      (GCC for C sources and G++ for C++ sources). A standard X server and 
+      the Xorg drivers are required to display correctly the game and a 
+      standard sound device with Alsa drivers for playing sounds.
+
+      Windows : A Windows operating system is required. You can use all 
+      capable systems of Microsoft (minimum Windows 98 Second Edition). 
+      You can run the game with all Intel graphics cards, ATI/AMD and 
+      nVidia cards. You should have the associated compilers (GCC and G++ 
+      for Windows) in order to compile the sources.
+
+
+
+R-Type Documentation						[Page 3]
+
+
+      For the both systems, you have to download and install the last 
+      release of SFML (Simple and Fast Multimedia Library) : 2.1. Check 
+      the official website (http://www.sfml-dev.org/download-fr.php) or 
+      your repository manager for Unix platforms.
+
+3. Installation & Execution
+
+      3.1. How to install on Linux
+
+      First, download the sources of the R-Type. If they are compressed, 
+      decompress them with tar or other archive manager. Then, if the
+      main libraries (SFML and other) are not installed on your computer
+      please install them. Move through the directory and compile the 
+      sources with the Makefile (make and cmake). If compilation fails, 
+      check the error messages, it possibly means : your operating 
+      system isn’t compatible or some libraries are missing.
+
+      3.2. How to install on Windows
+
+      First, download the sources of the R-Type. If they are compressed,
+      decompress them with WinZip or other archive manager. Then, if the
+      main libraries (SFML and other) are not installed on your computer
+      please install them. Launch the installer. If asked, select the 
+      directory of the sources and the directory when the binaries will 
+      be installed. If installation fails, check the error messages, it 
+      possibly means : your operating system isn’t compatible or some 
+      libraries are missing.
+
+      3.3. Minimum specifications
+
+      Libraries : SFML 2.1 (older versions are incompatible)
+      Standard sound devices and drivers (Alsa for Linux, Realtek or 
+      Generic drivers for Windows)
+      Standard graphic devices and drivers (nVidia, AMD/ATI, Intel’s 
+      chipsets are compatibles)
+
+      NB : You can run the game with a notebook or netbook configuration.
+      You don’t need to have a solid configuration to run R-Type, just 
+      only the SFML library.
+
+
+
+R-Type Documenation						[Page 4]
+
+
+4. How To Play
+
+      4.1. Supported devices
+
+      You can play R-Type with a standard keyboard or with a Microsoft 
+      XBOX 360 Controller. In order to use the controller, you should 
+      have the official driver of XBOX 360 Controller (you can download 
+      at this website : 
+      www.microsoft.com/hardware/fr-fr/d/xbox-360-controller-for-windows
+      ).
+
+      4.2. Command Listing
+
+      Keyboard : 
+      - Up arrow : move up
+      - Down arrow : move down
+      - Left arrow : move left
+      - Right arrow : move right
+      - Space : shoot
+      - Escape : menu
+      - P : pause / resume game
+
+      XBOX 360 Controller : 
+      - Left stick : move (Up / Down / Left / Right)
+      - Start : menu
+      - Select : pause / resume game
+      - A : shoot
+
+      NB : The XBOX 360 controller is only available on Microsoft 
+      operating systems (minimum Windows XP with Service Pack 2).
+
+
+5. Game Options
+
+
+      You can choose to modify the options of the game. By default, the 
+      difficulty is setted to Medium. Here are the options you can
+      modify : 
+      - Fullscreen : you can turn on/off the fullscreen mode
+      - Volume : you can increase/decrease the sound of the game.
+      - Difficulty : you can choose between 3 difficulties (Easy /
+      Medium / Insane).
+
+
+6. Scoring
+
+
+      In R-Type, when you shoot and deestroy an ennemy, you will gain 
+      points. You can increase your score with this specific actions : 
+      - Kill an ennemy
+      - Defeat a boss
+      - Pick up a bonus
+      When you die, the game is finished and your high score is saved 
+      in the High Scores page (accessible in the main menu). Only the 10
+      best scores will be printed so if you want the High Price, 
+      you know what to do.
+
+      There are two tabs, the Offline scores which lists all the local 
+      scores and the Online scores which lists all the multiplayer 
+      scores.
+
+
+
+R-Type Documentation						[Page 5]
+
+
+7. Communication Protocol (client / server)
+
+
+      7.1. Description
+
+      This section describes the behavior of the protocol used to make
+      some easy and secure communications between the server and the 
+      clients of R-Type.
+
+
+      7.2. Sending / Receiving procedure
+
+      The communication will match this following procedure : 
+      1. First, the server sends data to the connected client(s). This
+      data contains three important fields : the player's ID, the sprite
+      of the player's ship, the coordinates of the player. This data are
+      serialized in UDP form.
+      2. Then, the data is converted to a structure that contains these
+      informations.
+      3. The structure is sent to the concerned client(s) by using UDP
+      protocol.
+      4. When the client receives that, the data is deserialized and 
+      displayed.
+
+      7.3. Errors
+
+      If a packet isn't correct, the client continues to receive data.
+      No error message is displayed on the client and the lost data 
+      will be re-send by the server.
+
+
+8. Multi-Player Games
+
+
+      In R-Type, you can play and compete with other players on the web. 
+      The only thing you have to do is to connect your machine to 
+      Internet to be able to join a online server. When you are 
+      connected, choose the Multiplayer section in the Main Menu and 
+      enter the IP address of the server. Then mark the specified port 
+      in the appropriated field. Click the Connect button and wait for 
+      the status. If succeed, you will be redirected to the Lobby page 
+      and if it failed, check the error messages and try to resolve it. 
+      For main informations, check the FAQ.
+
+      In the Lobby page, you will be able to join available games or 
+      create your own. You can play with 4 players maximum.
+
+      This communication is very simple, but if there is an error during 
+      the sending proccess, the packet will be re-send by the client 
+      after a certain time. 
+
+      To know your IP adress, open a terminal and type ‘ifconfig’ (Linux)
+      or ‘ipconfig’ (Windows) and check the connected devices (Wi-Fi or 
+      Ethernet).
+
+
+
+R-Type Documentation						[Page 6]
+
+
+9. Frequently Asked Questions (F.A.Q.)
+
+
+      Q : Why the sources can’t compile on Linux ?
+      A : You don’t have the required packages installed on your Linux. 
+      Make sure you have installed the standard compilers (GCC, G++, Make
+      and CMake). If you have a error with the SFML, make sure you have 
+      installed and correctly setted the library on your PC.
+
+      Q : Why the sources can’t compile on Windows during installation ?
+      A : On Windows, it’s probably because you don’t have the SFML 
+      library installed on your system. You can download the library on 
+      the SFML website.
+
+      Q : Why R-Type doesn’t run on Windows ?
+      A : R-Type is only compatible with a Microsoft’s operating system 
+      that can support the SFML Library. The minimum requirements is to 
+      have the Visual C++ 9) on your Windows and the associated 
+      compilers (GCC 4.7).
+
+      Q : Why R-Type doesn’t run on Linux ?
+      A : R-Type is only compatible on Linux with SFML. You have to 
+      install the library on your system. Please check the version of 
+      your operating system before installing.
+
+      Q : A error tells that my PC isn’t compatible with the x64 version
+      of SFML. How can I resolve it ?
+      A : You want to run the game on a x64 platform and your PC is only 
+      compatible with x86 versions. In this case, download and install 
+      the x86 version of SFML and GCC and re-install the game.
+
+      Q : I can’t connect to a online server. How is it possible ?
+      A : You specify a wrong IP adress or you miss to specify the port 
+      in order to establish the connection. Please check the good 
+      parameters and retry the process. If not, verify your Internet 
+      connection.
+
+      Q : Can I play with a controller ? And why it doesn’t work ?
+      A : Yes, you can play with a XBOX 360 Controller. If the controller
+      doesn’t work, please check if the drivers are correctly installed. 
+      And if it is, please check your operating system. You can’t run the
+       game and play it with this controller if you are on Linux.
+
+
+
+R-Type Documentation						[Page 7]
+
+
+10. Credits
+
+      Thanks to Irem for releasing the R-Type game in 1987. This game
+      was created and developed by this team : 
+      - Jordan Bettin (bettin_j@epitech.eu)
+      - Louis Cailleux (caille_l@epitech.eu)
+      - Mael Charles (charle_b@epitech.eu)
+      - Antoine Dugast (dugast_a@epitech.eu)
+      - Florent Cerfon (cerfon_f@epitech.eu)
+      - Pierre Petit (petit_p@epitech.eu)
+
+      This product cannot be reproduced or copied.
+
+      This documentation is legally eligible by RFC 2223 form made by
+      Postel, J. and J. Reynolds, "Instructions to RFC Authors", 
+      RFC 2223, October 1997.
+
+      R-Type is a legal trademark of Irem. Amstrad CPC is a legal 
+      trademark of Amstrad. XBOX 360 is a legal trademark of Microsoft.
+      SFML is a library developed by Laurent Gomila. All other 
+      trademarks cited are legal and own by the legit companies.
